@@ -12,8 +12,8 @@ app.use(bodyParser.json());
 
 // Hardcoded credentials
 const validCredentials = {
-  name: 'JohnDoe',
-  password: 'password123',
+  name: 'Fakiimohammed',
+  password: 'fakii123',
 };
 
 // Routes for login

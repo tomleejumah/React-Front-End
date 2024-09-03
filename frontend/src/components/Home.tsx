@@ -7,7 +7,16 @@ const Home = () => {
   const age = urlParams.get('age');
 
   return (
-    <Container maxWidth="sm">
+    <Container 
+      maxWidth="sm"
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+      }}
+    >
       <Typography variant="h4" align="center" gutterBottom>
         Welcome, {name}!
       </Typography>
