@@ -43,6 +43,7 @@ const Login = () => {
     }
   };
 
+  // Render login form with user name, date of birth, and password input fields and error message if any 
   return (
     <Container
       maxWidth="sm"
