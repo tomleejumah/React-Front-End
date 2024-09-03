@@ -11,7 +11,7 @@ const Login = () => {
   const calculateAge = (dob: string) => {
     const birthDate = new Date(dob);
     const ageDifMs = Date.now() - birthDate.getTime();
-    const ageDate = new Date(ageDifMs); // miliseconds from epoch
+    const ageDate = new Date(ageDifMs); // milliseconds from epoch
     return Math.abs(ageDate.getUTCFullYear() - 1970);
   };
 
@@ -39,7 +39,16 @@ const Login = () => {
   };
 
   return (
-    <Container maxWidth="sm">
+    <Container
+      maxWidth="sm"
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+      }}
+    >
       <Typography variant="h4" align="center" gutterBottom>
         Login
       </Typography>
@@ -48,7 +57,7 @@ const Login = () => {
           {error}
         </Typography>
       )}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={{ width: '100%' }}>
         <TextField
           fullWidth
           label="Name"
@@ -85,3 +94,4 @@ const Login = () => {
 };
 
 export default Login;
+
