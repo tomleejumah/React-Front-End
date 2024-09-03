@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 // Hardcoded credentials
 const validCredentials = {
-  name: 'Fakiimohammed',
+  name: 'FakiiAhmad',
   password: 'Fakii123',
 };
 

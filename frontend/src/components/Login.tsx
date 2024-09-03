@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, TextField, Typography, Container, Box } from '@mui/material';
 import axios from 'axios';
 
+// Login component for user login and validation
 const Login = () => {
   const [name, setName] = useState('');
   const [dob, setDob] = useState('');
