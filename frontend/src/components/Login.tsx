@@ -17,6 +17,7 @@ const Login = () => {
     return Math.abs(ageDate.getUTCFullYear() - 1970);
   };
 
+  // Function to handle form submission
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     const age = calculateAge(dob);
