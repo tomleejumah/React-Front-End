@@ -9,6 +9,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+  // Function to calculate age from date of birth
   const calculateAge = (dob: string) => {
     const birthDate = new Date(dob);
     const ageDifMs = Date.now() - birthDate.getTime();
