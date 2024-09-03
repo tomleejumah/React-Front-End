@@ -16,6 +16,7 @@ const validCredentials = {
   password: 'password123',
 };
 
+// Routes for login
 app.post('/api/login', (req, res) => {
   const { name, password } = req.body;
 
@@ -26,6 +27,7 @@ app.post('/api/login', (req, res) => {
   }
 });
 
+// Start server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
