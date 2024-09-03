@@ -28,6 +28,7 @@ const Login = () => {
       return;
     }
 
+    // Send POST request to backend API with user details
     try {
       const response = await axios.post('http://localhost:5000/api/login', {
         name,
