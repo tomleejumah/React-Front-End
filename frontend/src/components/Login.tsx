@@ -43,6 +43,7 @@ const Login = () => {
     }
   };
 
+  // Render login form with error message if any and handle form submission event handler function call here to redirect to home page
   return (
     <Container
       maxWidth="sm"
