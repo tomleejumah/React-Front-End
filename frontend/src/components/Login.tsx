@@ -22,6 +22,7 @@ const Login = () => {
     event.preventDefault();
     const age = calculateAge(dob);
 
+    // Validate age between 18 and 50 years old 
     if (age < 18 || age > 50) {
       setError('Age must be between 18 and 50.');
       return;
