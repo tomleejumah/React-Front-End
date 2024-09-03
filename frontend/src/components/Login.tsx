@@ -1,34 +1,29 @@
 import React, { useState } from 'react';
-import { Button, TextField, Typography, Container } from '@mui/material';
+import { Button, TextField, Typography, Container, Box } from '@mui/material';
 import axios from 'axios';
 
-// Login component for user login and validation of credentials before redirecting to home page with user details passed as query params
 const Login = () => {
   const [name, setName] = useState('');
   const [dob, setDob] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  // Function to calculate age from date of birth
   const calculateAge = (dob: string) => {
     const birthDate = new Date(dob);
     const ageDifMs = Date.now() - birthDate.getTime();
-    const ageDate = new Date(ageDifMs); // milliseconds from epoch
+    const ageDate = new Date(ageDifMs);
     return Math.abs(ageDate.getUTCFullYear() - 1970);
   };
 
-  // Function to handle form submission
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     const age = calculateAge(dob);
 
-    // Validate age between 18 and 50 years old and display error message if not valid else redirect to home page with user details
     if (age < 18 || age > 50) {
       setError('Age must be between 18 and 50.');
       return;
     }
 
-    // Send POST request to backend API with user details
     try {
       const response = await axios.post('http://localhost:5000/api/login', {
         name,
@@ -43,7 +38,6 @@ const Login = () => {
     }
   };
 
-  // Render login form with error message if any and handle form submission event handler function call here to redirect to home page
   return (
     <Container
       maxWidth="sm"
@@ -63,7 +57,13 @@ const Login = () => {
           {error}
         </Typography>
       )}
-      <form onSubmit={handleSubmit} style={{ width: '100%' }}>
+      <Box
+        component="form"
+        onSubmit={handleSubmit}
+        sx={{
+          width: '100%',
+        }}
+      >
         <TextField
           fullWidth
           label="Name"
@@ -94,7 +94,7 @@ const Login = () => {
         <Button type="submit" variant="contained" color="primary" fullWidth>
           Login
         </Button>
-      </form>
+      </Box>
     </Container>
   );
 };
