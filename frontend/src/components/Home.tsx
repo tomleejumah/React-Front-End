@@ -7,6 +7,7 @@ const Home = () => {
   const name = urlParams.get('name');
   const age = urlParams.get('age');
 
+  // Render home page with user name and age data 
   return (
     <Container 
       maxWidth="sm"
