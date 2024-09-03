@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Typography } from '@mui/material';
 
+// Home component for user login and validation 
 const Home = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const name = urlParams.get('name');
