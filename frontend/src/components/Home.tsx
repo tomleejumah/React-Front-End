@@ -1,13 +1,11 @@
 import React from 'react';
-import { Container, Typography } from '@mui/material';
+import { Typography, Container } from '@mui/material';
 
-// Home component for user login and validation 
 const Home = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const name = urlParams.get('name');
   const age = urlParams.get('age');
 
-  // Render home page with user name and age data 
   return (
     <Container 
       maxWidth="sm"
@@ -20,10 +18,10 @@ const Home = () => {
       }}
     >
       <Typography variant="h4" align="center" gutterBottom>
-        Welcome, {name}!
+        Successfully logged in as {name}!
       </Typography>
       <Typography variant="h6" align="center">
-        You are {age} years old.
+        Your age is {age} years old.
       </Typography>
     </Container>
   );
